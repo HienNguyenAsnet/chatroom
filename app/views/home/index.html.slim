@@ -1,0 +1,14 @@
+.row.column
+  h1 Join a room
+.room-list.row.small-up-1.medium-up-2.large-up-3
+  .column.align-self-middle
+    = link_to new_room_path, class: 'add-room callout align-center-middle'
+      i.fi-plus
+  - @rooms.each do |room|
+    .column
+      .callout
+        h5.room-name = room.name
+        p.room-desc = room.desc
+        a.button Join
+.room.column
+  = will_paginate @rooms, renderer: PaginationListLinkRenderer

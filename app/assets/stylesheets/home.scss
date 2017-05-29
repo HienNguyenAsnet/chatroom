@@ -1,0 +1,38 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$desc-font-size: 16px;
+$desc-line-height: 1.5;
+$desc-lines-to-show: 3;
+
+.menu-item {
+  margin-left: 1rem;
+}
+
+.room-list {
+  .callout {
+    height: 200px;
+  }
+}
+
+.add-room {
+  display: flex;
+}
+
+.room-desc {
+  font-size: $desc-font-size;
+  line-height: $desc-line-height;
+
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  overflow: hidden;
+
+  height: $desc-font-size*$desc-line-height*$desc-lines-to-show; /* Fallback for non-webkit */
+
+  text-overflow: ellipsis;
+  word-break: break-all;
+
+  -webkit-line-clamp: $desc-lines-to-show;
+  -webkit-box-orient: vertical;
+}

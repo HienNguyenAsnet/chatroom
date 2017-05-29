@@ -1,0 +1,33 @@
+$footer-background: #2c3840;
+$footer-color: #fff;
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+
+  min-height: 100%;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+
+  color: $footer-color;
+  background: $footer-background;
+}
+
+.top-bar .account-menu {
+  background: #fff;
+}

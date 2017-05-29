@@ -1,0 +1,32 @@
+doctype html
+html lang="en"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .top-bar
+      .top-bar-left
+      .top-bar-right
+        - if user_signed_in?
+          ul.dropdown.menu[data-dropdown-menu]
+            li.menu-item
+              a[href='javascript:void(0);'] = current_user.email
+              ul.menu.account-menu
+                li
+                  = link_to "Logout", destroy_user_session_path, method: "delete"
+        - else
+          ul.menu
+            li.menu-item
+              = link_to "Login", new_user_session_path, class: 'button'
+            li.menu-item
+              = link_to "Signup", new_user_registration_path, class: 'button'
+    .container
+      = yield
+    .footer
+      .row.column.text-center
+        p.align-center-middle © 2017 Hien Nguyen.

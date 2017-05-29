@@ -1,0 +1,14 @@
+.row.column
+  h1 Create a room
+.row.column
+  = form_with model: @room do |form|
+    - unless flash.alert.blank?
+      .callout.alert
+        - flash.alert.each do |message|
+          p.error_message = message
+    end
+    label Room name
+    = form.text_field :name
+    label Room description
+    = form.text_area :desc, rows: 10
+    input.button[type="submit" value="Create"]
