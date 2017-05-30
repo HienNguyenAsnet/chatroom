@@ -14,6 +14,11 @@ class RoomsController < ApplicationController
     end
   end
 
+  def show
+    @room = Room.find params[:id]
+    @message = Message.new
+  end
+
   private
 
   def room_params

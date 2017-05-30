@@ -18,4 +18,6 @@
 class Room < ApplicationRecord
   belongs_to :user
   validates_presence_of :user, :name, :desc
+
+  has_many :messages
 end

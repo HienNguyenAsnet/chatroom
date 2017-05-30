@@ -1,0 +1,13 @@
+.room[data-room-id="#{@room.id}"]
+  .row.column
+    h1 = @room.name
+  .row.column
+    .callout.chat-histories
+      - @room.messages.each do |message|
+        p
+          span.author = "#{message.user.email}: "
+          span.message-text = message.text
+  .row.column
+    = form_with model: @message do |form|
+      = form.hidden_field :room_id, value: @room.id
+      = form.text_field :text, placeholder: 'Message', class: 'message-input'

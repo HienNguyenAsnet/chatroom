@@ -9,6 +9,6 @@
       .callout
         h5.room-name = room.name
         p.room-desc = room.desc
-        a.button Join
+        = link_to 'Join', room_path(room), class: 'button'
 .room.column
   = will_paginate @rooms, renderer: PaginationListLinkRenderer

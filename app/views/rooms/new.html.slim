@@ -3,10 +3,9 @@
 .row.column
   = form_with model: @room do |form|
     - unless flash.alert.blank?
-      .callout.alert
+      .callout.alert[data-closable]
         - flash.alert.each do |message|
           p.error_message = message
-    end
     label Room name
     = form.text_field :name
     label Room description
