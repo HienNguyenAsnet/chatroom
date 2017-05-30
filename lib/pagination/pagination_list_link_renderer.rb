@@ -5,7 +5,6 @@ class PaginationListLinkRenderer < WillPaginate::ActionView::LinkRenderer
 
     # links.push(page_link_or_span(@collection.previous_page, 'prev_page', @options[:previous_label]))
     # links.push(page_link_or_span(@collection.next_page, 'next_page', @options[:next_label]))
-    byebug
     links.unshift(page_link_or_span(@collection.previous_page, 'pagination-previous', 'Previous'))
     links.push(page_link_or_span(@collection.next_page, 'pagination-next', 'Next'))
 
